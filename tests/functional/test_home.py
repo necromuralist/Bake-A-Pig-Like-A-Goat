@@ -1,6 +1,12 @@
 # coding=utf-8
 """Testing A List Home Page."""
 
+# PyPi
+from expects import (
+    contain,
+    expect
+)
+
 from pytest_bdd import (
     given,
     scenarios,
@@ -8,24 +14,36 @@ from pytest_bdd import (
     when,
 )
 
+from selenium import webdriver
+
+import pytest
+
 # testing
+from .fixtures import browser, katamari
+
 and_also = then
 scenarios("../features/home.feature")
+
+HOME_PAGE = "http://localhost:5000"
 
 
 # ********** Opening the page? ********** #
 # @scenario('features/home.feature', 'Edith has heard about a new online to-do app and goes to the homepage.')
+# test_edith_has_heard_about_a_new_online_todo_app_and_goes_to_the_homepage
 
-@given('Edith\'s browser is on the home page')
-def ediths_browser_is_on_the_home_page():
+@given("Edith's browser is on the home page")
+def ediths_browser_is_on_the_home_page(browser):
+    browser.get(HOME_PAGE)
     return
 
 @when('the title is checked')
-def the_title_is_checked():
+def the_title_is_checked(browser, katamari):
+    katamari.title = browser.title
     return
 
 @then('it is the expected title')
-def it_is_the_expected_title():
+def it_is_the_expected_title(katamari):
+    expect(katamari.title).to(contain("To-Do"))
     return
 
 @and_also('she is invited to enter a to-do item')
