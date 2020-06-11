@@ -4,4 +4,4 @@
 
 This is a re-working of [[https://www.obeythetestinggoat.com/][Test-Driven Development with Python]] using [[https://flask.palletsprojects.com/en/1.1.x/][flask]] and possibly some other variations. I'm doing this because I want to go over the book again but with some variation so it's not just the same thing (and also because the last time I created a web service I used flask).
 
-The repository is hosted on [[https://github.com/necromuralist/Bake-A-Pig-Like-A-Goat][GitHub]], where the documentation will be as well, if I ever get to it.
+The repository is hosted on [[https://github.com/necromuralist/Bake-A-Pig-Like-A-Goat][GitHub]], as is the [[https://necromuralist.github.io/Bake-A-Pig-Like-A-Goat/][documentation]].
