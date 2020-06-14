@@ -19,7 +19,8 @@ from selenium import webdriver
 import pytest
 
 # testing
-from .fixtures import browser, katamari
+from .fixtures import browser
+from ..fixtures import katamari
 
 and_also = then
 scenarios("../features/home.feature")

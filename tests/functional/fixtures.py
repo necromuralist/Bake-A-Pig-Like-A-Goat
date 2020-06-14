@@ -3,11 +3,6 @@
 from pytest import fixture
 from selenium import webdriver
 
-
-class Katamari:
-    """Something to stick things into"""
-
-
 @fixture
 def browser():
     browser = webdriver.Firefox()
@@ -16,7 +11,3 @@ def browser():
     browser.close()
     return
 
-
-@fixture
-def katamari():
-    return Katamari()
