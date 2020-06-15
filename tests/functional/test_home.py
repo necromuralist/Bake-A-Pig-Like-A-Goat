@@ -22,13 +22,16 @@ import pytest
 from .fixtures import browser
 from ..fixtures import katamari
 
+# software under test
+from goatpig import TITLE
+
 and_also = then
 scenarios("../features/home.feature")
 
 HOME_PAGE = "http://localhost:5000"
 
 
-# ********** Opening the page? ********** #
+# ********** Opening the page ********** #
 # @scenario('features/home.feature', 'Edith has heard about a new online to-do app and goes to the homepage.')
 # test_edith_has_heard_about_a_new_online_todo_app_and_goes_to_the_homepage
 
@@ -44,7 +47,7 @@ def the_title_is_checked(browser, katamari):
 
 @then('it is the expected title')
 def it_is_the_expected_title(katamari):
-    expect(katamari.title).to(contain("To-Do"))
+    expect(katamari.title).to(contain(TITLE))
     return
 
 @and_also('she is invited to enter a to-do item')
